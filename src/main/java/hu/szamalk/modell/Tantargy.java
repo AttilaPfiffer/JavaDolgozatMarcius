@@ -28,6 +28,10 @@ public class Tantargy {
         this.kredit = 0;
     }
 
+    public Tantargy(String nev, int kredit) {
+        this.nev = nev;
+        this.kredit = kredit;
+    }
 
     public String getNev() {
         return nev;

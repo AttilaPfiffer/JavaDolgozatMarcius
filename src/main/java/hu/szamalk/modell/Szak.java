@@ -33,6 +33,8 @@ public class Szak implements Serializable {
 
     }
 
+
+
     public Szak(Tantargy[] targyak, List<String> tantargy, String nev, UUID id, int kredit) {
         this.targyak = targyak;
         this.tantargy = tantargy;

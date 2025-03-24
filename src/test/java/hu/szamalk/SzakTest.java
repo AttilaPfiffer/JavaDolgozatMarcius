@@ -34,8 +34,10 @@ class SzakTest {
 
     @Test
     void kreditMinimum() {
-        szak = new Szak();
-
+        System.out.println("A kredit csak 1 és 5 között lehet");
+        Assertions.assertAll(MinimumKreditException.class, () -> {
+            new Tantargy("Informatika", 1);
+        }, "Nincs benne az intervallumban!");
     }
 
 }
