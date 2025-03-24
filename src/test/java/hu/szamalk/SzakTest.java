@@ -35,9 +35,28 @@ class SzakTest {
     @Test
     void kreditMinimum() {
         System.out.println("A kredit csak 1 és 5 között lehet");
-        Assertions.assertAll(MinimumKreditException.class, () -> {
+        Assertions.assertTrue(MinimumKreditException.class, () -> {
             new Tantargy("Informatika", 1);
         }, "Nincs benne az intervallumban!");
     }
 
+}Szak szak;
+@BeforeEach
+void ini(){
+    szak = new Szak("egy szak neve");
+}
+
+@Test
+void testSzakTargyNevek(){
+    for (Tantargy tantargy : szak.targyak) {
+        Assertions.assertTrue(tantargy.getNev().length() > 3);
+    }
+}
+
+@Test
+void testGetTargyak(){
+    List<Tantargy> targyak = szak.getTargyak();
+    int eredeti = targyak.size();
+    targyak.add(new Tantargy());
+    Assertions.assertTrue(eredeti == szak.getTargyak().size());
 }
